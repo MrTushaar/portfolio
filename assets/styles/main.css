@@ -61,8 +61,9 @@ html {
 body {
   background-color: #F7F8F3;
   color: #0E1319;
-  font-family: poppins;
+  font-family: "poppins", Arial;
   font-weight: 300;
+  font-display: swap;
   line-height: 1.5;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;

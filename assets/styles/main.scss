@@ -18,8 +18,9 @@ html {
 body {
 	background-color: $bodyBg;
 	color: $generalBlack;
-	font-family: poppins;
+	font-family: "poppins", Arial;
 	font-weight: 300;
+	font-display: swap;
 	line-height: 1.5;
 	text-size-adjust: none;
 }
