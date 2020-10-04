@@ -47,13 +47,16 @@ body {
 .card_wrapper {
 	display: flex;
 	flex-direction: column;
-	border-radius: 40px;
-	max-width: 670px;
+	border-radius: 2.5rem;
+	// max-width: 670px;
+	max-width: 42rem;
 	padding: 50px 0;
+	padding: 3rem 0;
 
 	@include respond-to("small") {
 		flex-direction: row;
-		max-width: 768px;
+		// max-width: 768px;
+		max-width: 48rem;
 	}
 }
 
@@ -62,26 +65,30 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	width: 300px;
+	// width: 300px;
+	width: 18rem;
 	background: $generalBlack;
 	background: linear-gradient(0deg, $generalBlack 0%, $midnightBlack 100%);
-	border-radius: 40px;
+	border-radius: 2.5rem;
 	color: $white;
 	padding: 40px 0;
+	padding: 2.5rem 0;
 	z-index: 10;
 
 	@include respond-to("small") {
 		margin-top: 0;
 		padding: 70px 0;
+		padding: 4rem 0;
 		box-shadow: 0px 50px 50px -20px rgba($generalBlack, 0.1);
 	}
 
 	.image_container {
 		text-align: center;
 		margin-bottom: 20px;
+		margin-bottom: 1.25rem;
 
 		@include respond-to("small") {
-			margin-bottom: 40px;
+			margin-bottom: 2.5rem;
 		}
 
 		img {
@@ -101,11 +108,13 @@ body {
 		background-color: $yellow;
 		border: 0;
 		border-radius: 50px;
+		border-radius: 3rem;
 		outline: none;
+		font-family: poppins;
 		font-size: 1rem;
 		font-weight: 500;
-		font-family: poppins;
 		padding: 10px 40px;
+		padding: 0.6rem 2.5rem;
 		cursor: pointer;
 		position: relative;
 
@@ -118,6 +127,7 @@ body {
 			height: 100%;
 			background: rgba($yellow, 0.5);
 			border-radius: 50px;
+			border-radius: 3rem;
 			z-index: -1;
 			transition: all 0.5s ease-in-out;
 		}
@@ -133,13 +143,16 @@ body {
 			left: 0%;
 			bottom: calc(100% + 10px);
 			font-size: 14px;
+			font-size: 0.9rem;
 			color: $generalBlack;
 			background: $white;
 			padding: 6px 25px;
+			padding: 0.4rem 1.5rem;
 			border-radius: 5px;
+			border-radius: 0.3rem;
 			visibility: hidden;
 			opacity: 0;
-			transform: translateY(5px);
+			transform: translateY(0.3rem);
 			transition: all 0.2s ease-in-out;
 
 			&.active {
@@ -153,47 +166,61 @@ body {
 
 .card_info {
 	width: 300px;
+	width: 18rem;
 	margin: 0;
 	border-radius: 0 0 40px 40px;
+	border-radius: 0 0 2.5rem 2.5rem;
 	z-index: 1;
 	background-color: white;
 	box-shadow: 0px 85px 50px -45px rgba($generalBlack, 0.15);
 	padding: 50px 35px;
+	padding: 3rem 2.2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	transform: translateY(-35px);
+	transform: translateY(-2.2rem);
 	text-align: center;
 
 	@include respond-to("small") {
 		margin: 30px 0;
+		margin: 1.8rem 0;
 		width: 380px;
+		width: 24rem;
 		padding: 50px 55px;
-		border-radius: 0 40px 40px 0;
+		padding: 3rem 3.4rem;
 		transform: translateX(-5px);
+		transform: translateX(-0.3rem);
+		border-radius: 0 40px 40px 0;
+		border-radius: 0 2.5rem 2.5rem 0;
 		text-align: left;
 	}
 
 	.name {
 		font-size: 22px;
+		font-size: 1.4rem;
 		font-weight: 700;
 		margin-top: 15px;
+		margin-top: 1rem;
 
 		@include respond-to("small") {
 			font-size: 26px;
+			font-size: 1.6rem;
 		}
 	}
 
 	.main_handle {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 300;
 		margin-top: -5px;
 	}
 
 	.work_info {
-		font-size: 16px;
+		font-size: 1rem;
 		margin-top: 12px;
+		margin-top: 0.7rem;
 		margin-bottom: 30px;
+		margin-bottom: 1.8rem;
 		color: rgba($generalBlack, 0.6);
 	}
 
@@ -206,21 +233,28 @@ body {
 			justify-content: center;
 			align-items: center;
 			font-size: 20px;
+			font-size: 1.25rem;
 			margin: 0 auto;
 			border: 1.6px solid rgba($generalBlack, 0.2);
 			border-radius: 50%;
 			color: rgba($midnightBlack, 0.7);
 			width: 45px;
+			width: 2.8rem;
 			height: 45px;
+			height: 2.8rem;
 			position: relative;
 			transition: all 0.2s ease-in-out;
 
 			@include respond-to("small") {
 				width: 50px;
+				width: 3rem;
 				height: 50px;
+				height: 3rem;
 				font-size: 24px;
+				font-size: 1.5rem;
 				margin-left: 0;
 				margin-right: 10px;
+				margin-right: 0.6rem;
 			}
 
 			&:hover {
@@ -239,9 +273,11 @@ body {
 				position: absolute;
 				bottom: calc(100% + 10px);
 				font-size: 14px;
+				font-size: 0.8rem;
 				background: $midnightBlack;
 				color: $white;
 				padding: 6px 15px;
+				padding: 0.3rem 1rem;
 				border-radius: 5px;
 				visibility: hidden;
 				opacity: 0;
