@@ -24,8 +24,29 @@ function copySitemap() {
 } 
 exports.copySitemap = copySitemap;
 
+// copy images
+function copyImages() {
+    return gulp.src('./src/images/*')
+    .pipe(gulp.dest('./public/images'));
+}
+exports.copyImages = copyImages;
+
+// copy icons
+function copyIcons() {
+    return gulp.src('./src/icons/*')
+    .pipe(gulp.dest('./public/icons'));
+}
+exports.copyIcons = copyIcons;
+
+// copy assets
+function copyAssets() {
+    return gulp.src('./src/assets/*')
+    .pipe(gulp.dest('./public/assets'));
+}
+exports.copyAssets = copyAssets;
+
 // *** Note: Run 'copy_nonHtml_files' only when favicon, or xml-sitemap are modified
-gulp.task('copy_nonHtml_files', gulp.series(copyFavicon, copySitemap));
+gulp.task('copy_nonHtml_files', gulp.series(copyFavicon, copySitemap, copyImages, copyIcons, copyAssets));
 
 // build tasks ------------------------------------------------------------------------
 // copy .html files 
@@ -38,7 +59,7 @@ exports.copyHtml = copyHtml;
 
 // compile sass to css and minify
 function sassify() {
-    return gulp.src('src/styles/*.scss')
+    return gulp.src('src/styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({debug: true}, (details) => {
             console.log(`${details.name}: ${details.stats.originalSize}`);
@@ -68,7 +89,7 @@ function watch() {
         }
     });
     gulp.watch('src/*.html', gulp.series(copyHtml)).on('change', browserSync.reload);
-    gulp.watch('src/scripts/*.js', gulp.series(minifyJs));
-    gulp.watch('src/styles/*.scss', gulp.series(sassify));
+    gulp.watch('src/scripts/*.js', gulp.series(minifyJs)).on('change', browserSync.reload);
+    gulp.watch('src/styles/**/*.scss', gulp.series(sassify)).on('change', browserSync.reload);
 }
 exports.watch = watch;

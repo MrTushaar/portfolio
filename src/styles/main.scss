@@ -1,6 +1,11 @@
 
-// google fonts import
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'); 
 
-@import 'variables';
-@import 'reset'; 
+@import './abstract/colors';
+@import './abstract/typography';
+@import './abstract/variables';
+@import './base/reset';
+@import './base/base';
+@import './utilities/functions';
+@import './utilities/mixins';
+
+@import './components/header';

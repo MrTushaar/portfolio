@@ -1,9 +1,25 @@
 
+const header_nav = document.querySelectorAll(".each_header_nav_link");
+const h = document.querySelector('.each_header_nav_link:hover');
 
-console.log("ehllo");
+// document.addEventListener('mouseenter', function() {
+    for (const i of header_nav) {
+        let activa = i.classList.contains("active");
+        // if (i.classList.contains("active") && !(h.classList.contains('active'))) {
+        //     h.classList.add("active"); 
+        //     i.classList.remove("active"); 
+        // }
+        // active and hovered, add active;
+        // not active and hovered, add active on hovered and remove active from active. 
+        if (activa && h) {
+            activa.classList.add('active');
+        }
+    }
+// });
 
-// this is a comment 
 
-
-
-console.log('hellotus ahr');
+// const header_contact_btn = document.querySelector(".each_header_nav_link.contact");
+// // header_contact_btn.addEventListener('mouseover', func());
+// function func() {
+//     header_contact_btn.innerHTML = "Email";
+// }

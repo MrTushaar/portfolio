@@ -1,1 +1,1 @@
-console.log("ehllo"),console.log("hellotus ahr");
+const header_nav=document.querySelectorAll(".each_header_nav_link"),h=document.querySelector(".each_header_nav_link:hover");for(const a of header_nav){let e=a.classList.contains("active");e&&h&&e.classList.add("active")}

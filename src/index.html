@@ -63,8 +63,8 @@
 <body>
     <section class="hero">
         <header>
-            <div class="logo-container">
-                tushar
+            <div class="logo_container">
+                <b>tushar</b>
                 <span>k</span>
                 <span>a</span>
                 <span>n</span>
@@ -73,31 +73,47 @@
                 <span>d</span>
                 <span>h</span>
                 <span>a</span>
-                <span>r</span>.
+                <span>r</span>
+                <b>.</b>
             </div>
-            
-            <nav>
-                Live Reload setup done some changes made.
+               
+            <nav class="header_nav">
+                <a href="index.html" class="each_header_nav_link">Experiences</a>
+                <a href="index.html" class="each_header_nav_link">Articles</a>
+                <a href="index.html" class="each_header_nav_link active">Contact</a> 
             </nav>
         </header>
 
-        <div class="quick-intro">
-            <picture></picture>
-            <div class="quick-intro-text-group">
-                <h1>Tushar Kanti Dhar</h1>
+        <div class="quick_intro">
+            <picture>
+                <source src="./images/profile_photo.png">
+                <img src="./images/profile_photo.png" alt="Tushar's self portrait">
+            </picture>
+
+            <div class="quick_intro_text_group">
+                <h1>Hello! I'm Tushar.</h1>
                 <ul>
-                    <li>Full-time Undergraduate Student</li>
-                    <li>Bengaluru, Karnataka, India</li>
+                    <li>Full-time Undergraduate Student.</li>
+                    <li>Based in Bengaluru, Karnataka, India.</li>
                 </ul>
+                <a href="./assets/resume.pdf" download="Resume">Download Résumé</a>
             </div>
         </div>
 
-        <div class="landing-quick-links">
+        <div class="landing_quick_links">
             <a href="https://linkedin.com/in/hellotushaar" class="" target="_blank">LinkedIn</a>
             <a href="https://github.com/hellotushaar" class="" target="_blank">GitHub</a>
             <a href="https://twitter.com/hellotushaar" class="" target="_blank">Twitter</a>
         </div>
     </section>
+
+    <section class="resume_container">
+        <main></main>
+        <aside></aside>
+    </section>
+
+
+    <script src="./scripts/main.js"></script>
 
 </body>
 </html>

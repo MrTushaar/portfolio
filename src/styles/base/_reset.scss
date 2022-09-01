@@ -1,0 +1,57 @@
+
+::selection {
+    background: $black;
+    color: $white;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeSpeed;
+    font-size-adjust: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
