@@ -13,35 +13,35 @@ const gulp = require("gulp"),
 // copy favicon
 function copyFavicon() {
     return gulp.src('src/*.ico')
-    .pipe(gulp.dest('public'));
+        .pipe(gulp.dest('docs'));
 }
 exports.copyFavicon = copyFavicon;
 
 // copy xml-sitemap 
 function copySitemap() {
     return gulp.src('src/*.xml')
-    .pipe(gulp.dest('public'));
-} 
+        .pipe(gulp.dest('docs'));
+}
 exports.copySitemap = copySitemap;
 
 // copy images
 function copyImages() {
     return gulp.src('./src/images/*')
-    .pipe(gulp.dest('./public/images'));
+        .pipe(gulp.dest('./docs/images'));
 }
 exports.copyImages = copyImages;
 
 // copy icons
 function copyIcons() {
     return gulp.src('./src/icons/*')
-    .pipe(gulp.dest('./public/icons'));
+        .pipe(gulp.dest('./docs/icons'));
 }
 exports.copyIcons = copyIcons;
 
 // copy assets
 function copyAssets() {
     return gulp.src('./src/assets/*')
-    .pipe(gulp.dest('./public/assets'));
+        .pipe(gulp.dest('./docs/assets'));
 }
 exports.copyAssets = copyAssets;
 
@@ -52,7 +52,7 @@ gulp.task('copy_nonHtml_files', gulp.series(copyFavicon, copySitemap, copyImages
 // copy .html files 
 function copyHtml() {
     return gulp.src("src/*.html")
-        .pipe(gulp.dest("public"))
+        .pipe(gulp.dest("docs"))
         .pipe(browserSync.stream());
 }
 exports.copyHtml = copyHtml;
@@ -61,11 +61,11 @@ exports.copyHtml = copyHtml;
 function sassify() {
     return gulp.src('src/styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(cleanCSS({debug: true}, (details) => {
+        .pipe(cleanCSS({ debug: true }, (details) => {
             console.log(`${details.name}: ${details.stats.originalSize}`);
             console.log(`${details.name}: ${details.stats.minifiedSize}`);
         }))
-        .pipe(gulp.dest('public/styles/'))
+        .pipe(gulp.dest('docs/styles/'))
         .pipe(browserSync.stream());
 }
 exports.sassify = sassify;
@@ -74,7 +74,7 @@ exports.sassify = sassify;
 function minifyJs() {
     return gulp.src('src/scripts/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('public/scripts'))
+        .pipe(gulp.dest('docs/scripts'))
         .pipe(browserSync.stream());
 }
 exports.minifyJs = minifyJs;
@@ -85,7 +85,7 @@ gulp.task('build', gulp.series(copyHtml, sassify, minifyJs));
 function watch() {
     browserSync.init({
         server: {
-            baseDir: './public'
+            baseDir: './docs'
         }
     });
     gulp.watch('src/*.html', gulp.series(copyHtml)).on('change', browserSync.reload);
