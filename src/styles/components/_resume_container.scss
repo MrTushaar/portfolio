@@ -1,0 +1,106 @@
+
+
+.resume_container {
+    padding: 2rem 10%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 2rem;
+
+    main .categories, aside .categories {
+        margin-bottom: 2rem;
+    }
+}
+
+.categories {
+    @include resume_category;
+
+    &:hover .category_title {
+        opacity: 1;
+    }
+}
+
+.portfolio_links a {
+    @include linked_buttons("nonfocused", "false");
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover svg {
+        fill: $white;
+    }
+    
+    svg {
+        width: 1rem;
+        margin-right: 0.5rem;
+        fill: $theme;
+        transition: $transition;
+    }
+}
+
+.education .education_wrap:last-child {
+    margin-top: 1.8rem;
+}
+
+.expertise {
+    span {
+        @include nonlinked_buttons;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.technologies {
+    font-size: 0;
+    
+    span {
+        @include nonlinked_buttons;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.languages {
+    font-size: 0;
+    
+    strong {
+        @include nonlinked_buttons;
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        b {
+            font-weight: 900;
+            margin-right: 0.3rem;
+        }
+        span {
+            font-weight: 400;
+            color: rgba($black, 0.5);
+        }
+    }
+}
+
+.hobbies {
+    font-size: 0;
+    
+    span, a {
+        @include nonlinked_buttons;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

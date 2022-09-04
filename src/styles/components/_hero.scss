@@ -1,10 +1,9 @@
 
 .hero {
-    // background: $highlight;
     position: relative;
     padding: 2rem 10%;
     height: 70vh;
-    background: url('../images/hero_bg.jpg') no-repeat fixed bottom center;
+    background: url('../images/hero_bg.jpg') no-repeat fixed bottom right;
     background-size: cover;
     z-index: 0;
 
@@ -74,13 +73,29 @@ header nav {
         //     @include linked_buttons("focused", $rounded: true);
         // }
         &:last-child {
-            @include linked_buttons("focused", $rounded: true);
-            // position: relative;
+            @include linked_buttons("focused", "true");
+            position: relative;
             overflow: hidden;
             z-index: 0;
-            
+
             &::after {
+                @include linked_buttons("focused", "true");
                 content: 'Email';
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: $theme;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover::after {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
             }
         }
     }
@@ -115,14 +130,30 @@ header nav {
         }
     }
     a {
-        @include linked_buttons("focused", $rounded: true);
-        // position: relative;
+        @include linked_buttons("focused", "true");
+        position: relative;
         margin-top: 1.5rem;
         overflow: hidden;
         z-index: 0;
-            
+
         &::after {
+            @include linked_buttons("focused", "true");
             content: '40 MB, PDF';
+            text-align: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: $theme;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:hover::after {
+            top: 0;
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
@@ -136,7 +167,7 @@ header nav {
     align-items: end;
 
     a {
-        @include linked_buttons("nonfocused", $rounded: true);
+        @include linked_buttons("nonfocused", "true");
         margin-top: 0.8rem;
         font-weight: 400;
         background: rgba($white, 0.6);

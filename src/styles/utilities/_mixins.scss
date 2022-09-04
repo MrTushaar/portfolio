@@ -1,7 +1,7 @@
 
 // linked buttons
 
-@mixin linked_buttons($type, $rounded: false) {
+@mixin linked_buttons($type, $rounded: "false") {
     display: inline-block;
     font-size: 1rem;
     padding: 0.6rem 2.2rem;
@@ -11,27 +11,7 @@
     border-radius: 10px;
     transition: $transition;
 
-    &::after {
-        @include linked_buttons("focused", $rounded: true);
-        content: '';
-        text-align: center;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: $theme;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 0;
-        visibility: hidden;
-    }
-    &:hover::after {
-        top: 0;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    @if $rounded {
+    @if $rounded == "true"{
         border-radius: 30px;
     }
     @if $type == "focused" {
@@ -47,4 +27,21 @@
             color: $white;
         }
     }
+}
+
+@mixin nonlinked_buttons {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.6rem 2.2rem;
+    background: $highlight;
+    color: $dark_theme;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+
+@mixin resume_category {
+    padding: 3rem;
+    background: $white;
+    border-radius: 30px;
 }

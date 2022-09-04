@@ -1,9 +1,11 @@
 
 body {
+    position: relative;
     font-family: "Inter", 'Segoe UI', sans-serif;
     font-size: 100%;
+    font-weight: 400;
     line-height: 1.5;
     letter-spacing: -0.5px;
-    background: $white;
+    background: $section_bg;
     color: $black;
 }
