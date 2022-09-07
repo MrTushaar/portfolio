@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" content="Welcome to Tushar's portfolio website!">
+    <meta name="title" content="Portfolio - Tushar Kanti Dhar">
     <meta name="description" content="Tushar is a self-taught tech fanatic with knowledge in front-end development and UI / UX design and invulnerable enthusiasm to keep improving at what he does. In the coming days, he sees himself as a cybersecurity expert to defend the digital life of billions.">
     <meta name="keywords" content="portfolio, Tushar, personal website, resume, programming, web development, cybersecurity, network security, information security, database, technology, digital creation">
     <meta name="robots" content="index, follow">
@@ -21,48 +21,34 @@
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico"> -->
     <meta name="msapplication-TileColor" content="#3374F3"> 
     <meta name="msapplication-TileImage" content="favicon.ico">
 
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Tushar Kanti Dhar">
+    <meta property="og:title" content="Tushar Kanti Dhar - Portfolio">
     <meta property="og:description" content="Tushar is a self-taught tech fanatic with knowledge in front-end development and UI / UX design and invulnerable enthusiasm to keep improving at what he does.">
-	<meta property="og:image" content="https://hellotushaar.com/img/social-thumb.jpg">
-	<meta property="og:image:type" content="image/jpg">
-	<!-- <meta property="og:image:width" content="1000">
-	<meta property="og:image:height" content="1000"> -->
-    <meta property="og:url" content="https://hellotushaar.com/">
+	<meta property="og:image" content="https://hellotushaar.me/images/social_media_thumbnail.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+    <meta property="og:url" content="https://hellotushaar.me/">
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
 
-    <!-- scripts -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165361695-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-165361695-1');
-    </script>
-
+    <!-- documentation -->
+    <!-- use webp and imagemin -->
+    <!-- check links and other clickables. -->
+    <!-- Optimize for mobile devices. -->
+    <!-- optimize contents -->
+    <!-- check all assets -->
+    <!-- develop social media thumb image -->
+    <!-- update sitemap -->
+    <!-- update google search console -->
 </head>
 
 <body>
-    <section class="hero" id="hero">
+    <section class="hero">
         <header>
             <div class="logo_container">
                 <b>tushar</b>
@@ -79,7 +65,7 @@
             </div>
                
             <nav class="header_nav">
-                <a href="index.html" class="each_header_nav_link">Experiences</a>
+                <a href="javascript:void()" onclick="document.getElementById('experiences').scrollIntoView({behavior: 'smooth'})" class="each_header_nav_link">Experiences</a>
                 <a href="javascript:void()" onclick="openComingSoonModal()" class="each_header_nav_link">Articles</a>
                 <a href="mailto:hellotushaar@gmail.com" class="each_header_nav_link active">Contact</a> 
             </nav>
@@ -88,7 +74,7 @@
         <div class="quick_intro">
             <picture>
                 <source src="./images/profile_photo.png">
-                <img src="./images/profile_photo.png" alt="Tushar's self portrait">
+                <img src="./images/profile_photo.png" alt="Tushar's self portrait" loading="lazy">
             </picture>
 
             <div class="quick_intro_text_group">
@@ -110,12 +96,12 @@
 
     <section class="resume_container">
         <main>
-            <div class="categories experiences">
+            <div class="categories experiences" id="experiences">
                 <h1 class="category_title">Experiences</h1>
                 <div class="experience_wrap">
-                    <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image">
-                    <h2 class="category_subtitle">Executive, Technical Support · Vibable Media</h2>
-                    <p class="category_meta">August 2022 - Present</p>
+                    <!-- <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image" loading="lazy"> -->
+                    <h2 class="category_subtitle">Front-End Developer, Technical Support · Vibable Media</h2>
+                    <p class="category_meta">August 2019 - September 2020</p>
 
                     <div class="category_info">
                         Vibable Media is a digital marketing startup agency based in Dhaka, Bangladesh. Tushar's role was to create the official website for the agency that would showcase its services, accomplishment and agenda to its potential customers.
@@ -130,15 +116,15 @@
                     </p>
                 </div>
 
-                <a href="index.html" class="category_extra_btn">See All Experiences</a>
+                <a href="javascript:void()" onclick="openExperiencesModal()" class="category_extra_btn">See Other Experiences</a>
             </div>
 
             <div class="categories certifications">
                 <h1 class="category_title">Trainings & Certifications</h1>
                 <div class="experience_wrap">
-                    <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image">
-                    <h2 class="category_subtitle">Executive, Technical Support · Vibable Media</h2>
-                    <p class="category_meta">August 2022 - Present</p>
+                    <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image" loading="lazy">
+                    <h2 class="category_subtitle">Introduction to Hardware and Operating Systems · IBM Skills Network</h2>
+                    <p class="category_meta">Issued in June 2022 by <a href="https://coursera.org" target="_blank">Coursera</a></p>
 
                     <div class="category_info">
                         Vibable Media is a digital marketing startup agency based in Dhaka, Bangladesh. Tushar's role was to create the official website for the agency that would showcase its services, accomplishment and agenda to its potential customers.
@@ -149,7 +135,7 @@
                         </ul>
                     </div>
                     <p class="category_link">
-                        Check the <a href="">verified certificate</a>.
+                        Check the <a href="https://coursera.org/verify/TEUWC443AQEA" target="_blank">verified certificate</a>.
                     </p>
                 </div>
 
@@ -159,7 +145,7 @@
             <div class="categories badges">
                 <h1 class="category_title">Badges Achieved</h1>
                 <div class="experience_wrap">
-                    <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image">
+                    <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image" loading="lazy">
                     <h2 class="category_subtitle">Microsoft Azure Fundamentals: Describe cloud concepts</h2>
                     <p class="category_meta">August 2022 - Microsoft</p>
 
@@ -199,7 +185,7 @@
                     </p>
                 </div>
 
-                <a href="index.html" class="category_extra_btn">See All Activities</a>
+                <a href="javascript:void()" onclick="openCommunityModal()" class="category_extra_btn">See Other Activities</a>
             </div>
 
             <div class="categories education">
@@ -272,26 +258,24 @@
 
             <div class="categories expertise">
                 <h1 class="category_title">Expertise</h1>
-                <span>UI Design / Testing</span>
-                <span>UX Design / Testing</span>
                 <span>Front-End Development</span>
-                <span>Version Control System</span>
+                <span>UI / UX Design & Testing</span>
                 <span>Python Programming</span>
+                <span>Version Control System</span>
                 <span>Database Management</span>
             </div>
 
             <div class="categories technologies">
                 <h1 class="category_title">Technologies</h1>
-                <span>HTML5</span>
-                <span>Javascript</span>
                 <span>Python</span>
-                <span>CSS3</span>
-                <span>Bootstrap</span>
+                <span>Javascript</span>
+                <span>Git & GitHub</span>
+                <span>Linux</span>
+                <span>Figma</span>
                 <span>SASS</span>
                 <span>Google Workspace</span>
-                <span>Figma</span>
-                <span>Linux</span>
-                <span>Git & GitHub</span>
+                <span>CSS3</span>
+                <span>HTML5</span>
             </div>
 
             <div class="categories languages">
@@ -338,7 +322,6 @@
                 <a href="https://linkedin.com/in/hellotushaar" target="_blank">LinkedIn</a>
                 <a href="https://twitter.com/hellotushaar" target="_blank">Twitter</a>
                 <a href="https://github.com/hellotushaar" target="_blank">GitHub</a>
-                <a href="https://telegram.com/hellotushaar" target="_blank">Telegram</a>
                 <a href="https://hellotushaar.medium.com" target="_blank">Medium</a>
             </nav>
             <div class="footer_bottom_right">
@@ -347,7 +330,7 @@
         </div>
     </footer>
 
-    <div id="modal_overlay">
+    <div id="modal_overlay" class="modal_overlay">
         <div id="coming_soon_modal">
             <div class="coming_soon_contents">
                 <h1 class="category_title">Coming up soon!</h1>
@@ -357,6 +340,111 @@
         </div>
     </div>
 
+    <div id="experiences_modal_overlay" class="modal_overlay">
+        <div id="experiences_modal">
+            <div class="experiences_modal_contents">
+                <div class="modal_title">
+                    <h1 class="category_title">Experiences</h1>
+                    <span onclick="closeExperiencesModal()">
+                        <img src="./icons/cross.svg" alt="cross icon" loading="lazy">
+                    </span>
+                </div>
+
+                <div class="categories experiences one">
+                    <div class="experiences_wrap">
+                        <!-- <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image"> -->
+                        <h2 class="category_subtitle">Front-End Developer, UI / UX Designer · 3rd Eye Vision</h2>
+                        <p class="category_meta">August 2022 - Present</p>
+
+                        <div class="category_info">
+                            As a Front-End Developer, I am responsible for developing and maintaining the front-end of the company's website. I am also responsible for designing and testing the user interface and user experience of the company's website.
+                            <ul>
+                                What I do as a 3rd Eye Vision intern:
+                                <li>Design and develop unique digital products.</li>
+                                <li>Maintain the products.</li>
+                                <li>Collaborate with team members to build killer solutions.</li>
+                            </ul>
+                        </div>
+                        <p class="category_link">
+                            See the <a href="https://3eyevisions.com" target="_blank">official website</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="close_modal_btn_wrap">
+                    <span class="close_modal_btn" onclick="closeExperiencesModal()">Back to home</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="community_modal_overlay" class="modal_overlay">
+        <div id="community_modal">
+            <div class="community_modal_contents">
+                <div class="modal_title">
+                    <h1 class="category_title">Community Activities</h1>
+                    <span onclick="closeCommunityModal()">
+                        <img src="./icons/cross.svg" alt="cross icon" loading="lazy">
+                    </span>
+                </div>
+
+                <div class="categories extracurricular one">
+                    <div class="extracurricular_wrap">
+                        <!-- <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image"> -->
+                        <h2 class="category_subtitle">CySec Club · Gitam University</h2>
+                        <p class="category_meta">August 2022 - Member</p>
+
+                        <div class="category_info">
+                            Vibable Media is a digital marketing startup agency based in Dhaka, Bangladesh. Tushar's role was to create the official website for the agency that would showcase its services, accomplishment and agenda to its potential customers.
+                            <!-- <ul>
+                                <li>Built the website using frontend technologies for all screen sizes.</li>
+                                <li>Designed and updated the layouts to meet usability, convenience and performance.</li>
+                                <li>Leveraged updated technologies to create a pixel-perfect solution.</li>
+                            </ul> -->
+                        </div>
+                        <p class="category_link">
+                            Check the <a href="https://linktr.ee/cysec" target="_blank">club website</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="categories extracurricular two">
+                    <div class="extracurricular_wrap">
+                        <!-- <img src="./images/software-developer-6521720_960_720 1.png" alt="" class="category_image"> -->
+                        <h2 class="category_subtitle">CySec Club · Gitam University</h2>
+                        <p class="category_meta">August 2022 - Member</p>
+
+                        <div class="category_info">
+                            Vibable Media is a digital marketing startup agency based in Dhaka, Bangladesh. Tushar's role was to create the official website for the agency that would showcase its services, accomplishment and agenda to its potential customers.
+                            <!-- <ul>
+                                <li>Built the website using frontend technologies for all screen sizes.</li>
+                                <li>Designed and updated the layouts to meet usability, convenience and performance.</li>
+                                <li>Leveraged updated technologies to create a pixel-perfect solution.</li>
+                            </ul> -->
+                        </div>
+                        <p class="category_link">
+                            Check the <a href="https://linktr.ee/cysec" target="_blank">club website</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="close_modal_btn_wrap">
+                    <span class="close_modal_btn" onclick="closeCommunityModal()">Back to home</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scripts -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165361695-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-165361695-1');
+    </script>
     <script src="./scripts/main.js"></script>
 
 </body>

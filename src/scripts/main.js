@@ -26,16 +26,57 @@
 
 // open and close coming soon modal
 const body = document.querySelector('body');
-const comingsoon_modal_overlay = document.getElementById('modal_overlay');
+const modal_overlay = document.querySelector('.modal_overlay');
 const comingsoon_modal = document.getElementById('coming_soon_modal');
 
 function openComingSoonModal() {
-    comingsoon_modal_overlay.classList.add('active');
+    modal_overlay.classList.add('active');
     comingsoon_modal.classList.add('active');
     body.style.overflow = "hidden";
 }
 function closeComingSoonModal() {
-    comingsoon_modal_overlay.classList.remove('active');
+    modal_overlay.classList.remove('active');
     comingsoon_modal.classList.remove('active');
+    body.style.overflow = "auto";
+}
+
+// open and close community modal
+const community_modal_overlay = document.getElementById('community_modal_overlay');
+const community_modal = document.getElementById('community_modal');
+const community_item_one = document.querySelector('#community_modal .extracurricular.one');
+const community_item_two = document.querySelector('#community_modal .extracurricular.two');
+
+function openCommunityModal() {
+    community_modal_overlay.classList.add('active');
+    community_modal.classList.add('active');
+    community_item_one.classList.add('active');
+    community_item_two.classList.add('active');
+    body.style.overflow = "hidden";
+}
+
+function closeCommunityModal() {
+    community_modal_overlay.classList.remove('active');
+    community_modal.classList.remove('active');
+    community_item_one.classList.remove('active');
+    community_item_two.classList.remove('active');
+    body.style.overflow = "auto";
+}
+
+// open and close experiences modal 
+const experiences_modal_overlay = document.getElementById('experiences_modal_overlay');
+const experiences_modal = document.getElementById('experiences_modal');
+const experiences_item_one = document.querySelector('#experiences_modal .experiences.one');
+
+function openExperiencesModal() {
+    experiences_modal_overlay.classList.add('active');
+    experiences_modal.classList.add('active');
+    experiences_item_one.classList.add('active');
+    body.style.overflow = "hidden";
+}
+
+function closeExperiencesModal() {
+    experiences_modal_overlay.classList.remove('active');
+    experiences_modal.classList.remove('active');
+    experiences_item_one.classList.remove('active');
     body.style.overflow = "auto";
 }

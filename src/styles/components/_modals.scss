@@ -1,5 +1,5 @@
 
-#modal_overlay {
+.modal_overlay {
     position: fixed;
     overflow: auto;
     top: 0;
@@ -52,5 +52,77 @@
     span {
         @include linked_buttons("focused", "true");
         cursor: pointer;
+    }
+}
+
+#community_modal, #experiences_modal {
+    position: absolute;
+    top: 2rem;
+    margin: 5rem 10%;
+    padding: 0 10%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+
+    &.active {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal_title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.2rem;
+
+        .category_title {
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            -webkit-text-fill-color: unset;
+            color: $black;
+            margin-bottom: 0;
+        }
+        span {
+            cursor: pointer;
+            width: 3rem;
+            height: 3rem;
+            background: $white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .extracurricular, .experiences {
+        margin-bottom: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(5rem);
+        transition: $transition;
+
+        &.one {
+            transition-delay: 0.1s;
+        }
+        &.two {
+            transition-delay: 0.2s;
+        }
+        &.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .close_modal_btn_wrap {
+        display: flex;
+        margin-bottom: 5rem;
+        
+        .close_modal_btn {
+            @include linked_buttons("focused", "true");
+            cursor: pointer;
+            margin-left: auto;
+        }
     }
 }

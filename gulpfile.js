@@ -5,10 +5,7 @@ const gulp = require("gulp"),
     uglify = require("gulp-uglify"),
     browserSync = require('browser-sync').create();
 // const imageMin = require("gulp-imagemin");
-// const w3cjs = require("gulp-w3cjs");
-// const tinypngCompress = require("gulp-tinypng-compress");
 // const webpConverter = require("gulp-webp");
-// const copy = require("gulp-copy");
 
 // copy favicon
 function copyFavicon() {
@@ -93,3 +90,5 @@ function watch() {
     gulp.watch('src/styles/**/*.scss', gulp.series(sassify)).on('change', browserSync.reload);
 }
 exports.watch = watch;
+
+gulp.task('default', gulp.series('build', 'copy_nonHtml_files', watch));
