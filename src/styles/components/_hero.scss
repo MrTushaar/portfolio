@@ -69,9 +69,6 @@ header nav {
         display: inline-block;
         overflow: hidden;
 
-        // &.active {
-        //     @include linked_buttons("focused", $rounded: true);
-        // }
         &:last-child {
             @include linked_buttons("focused", "true");
             position: relative;
@@ -110,6 +107,9 @@ header nav {
     img {
         width: 15rem;
         margin-right: 1.5rem;
+        border: 0.35rem solid rgba($theme, 0);
+        border-radius: 50%;
+        outline: 0.35rem solid $theme;
     }
 }
 
