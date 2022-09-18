@@ -45,6 +45,11 @@
 
     ul {
         margin: 1rem 0 0 1rem;  
+
+        a {
+            font-weight: 500;
+            color: $theme;
+        }
     }
 }
 
