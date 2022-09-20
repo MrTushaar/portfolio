@@ -6,10 +6,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($black, 0.1);
+    background-color: rgba($black, 0.2);
     mix-blend-mode: normal;
-    -webkit-backdrop-filter: blur(30px);
-    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(2rem);
+    backdrop-filter: blur(2rem);
     z-index: 999;
     visibility: hidden;
     opacity: 0;
@@ -95,6 +95,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            img {
+                width: 1rem;
+            }
         }
     }
     .extracurricular, .experiences {

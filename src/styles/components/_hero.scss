@@ -106,10 +106,8 @@ header nav {
 
     img {
         width: 15rem;
-        margin-right: 1.5rem;
-        border: 0.35rem solid rgba($theme, 0);
+        margin-right: 2rem;
         border-radius: 50%;
-        outline: 0.35rem solid $theme;
     }
 }
 
@@ -170,7 +168,13 @@ header nav {
         @include linked_buttons("nonfocused", "true");
         margin-top: 0.8rem;
         font-weight: 400;
-        background: rgba($white, 0.6);
-        backdrop-filter: blur(60px);
+        background: rgba($white, 0.5);
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+
+        &:hover {
+            background: $white;
+            color: $theme;
+        }
     }
 }
