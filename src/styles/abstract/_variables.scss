@@ -1,2 +1,23 @@
-
 $transition: all 0.3s ease-in-out;
+
+// $phone: 480px;
+// $tablet: 768px;
+// $desktop: 1280px;
+
+$breakpoints: (
+    sm: (
+        min: 360px,
+        max: 480px,
+    ),
+    md: (
+        min: 481px,
+        max: 768px,
+    ),
+    lg: (
+        min: 769px,
+        max: 1280px,
+    ),
+    xl: (
+        min: 1281px,
+    )
+);

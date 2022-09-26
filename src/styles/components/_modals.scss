@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($black, 0.2);
+    background-color: rgba($black, 0.1);
     mix-blend-mode: normal;
     -webkit-backdrop-filter: blur(2rem);
     backdrop-filter: blur(2rem);
@@ -41,6 +41,11 @@
         visibility: visible;
         opacity: 1;
     }
+
+    @include breakpoint(768px, max) {
+        width: calc(100% - 4rem);
+        margin: 5rem 2rem;
+    }
 }
 
 .coming_soon_contents {
@@ -70,6 +75,14 @@
         top: 0;
         opacity: 1;
         visibility: visible;
+    }
+
+    @include breakpoint(1024px, max) {
+        margin: 5rem 0;
+    }
+
+    @include breakpoint(768px, max) {
+        padding: 0 2rem;
     }
 
     .modal_title {

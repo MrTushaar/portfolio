@@ -1,11 +1,10 @@
-
 const gulp = require("gulp"),
     cleanCSS = require('gulp-clean-css'),
     sass = require("gulp-sass")(require('sass')),
     uglify = require("gulp-uglify"),
+    tinypng = require("gulp-tinypng-compress"),
+    autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
-// const imageMin = require("gulp-imagemin");
-// const webpConverter = require("gulp-webp");
 
 // copy favicon
 function copyFavicon() {
@@ -24,21 +23,24 @@ exports.copySitemap = copySitemap;
 // copy images
 function copyImages() {
     return gulp.src('./src/images/*')
-        .pipe(gulp.dest('./docs/images'));
+        .pipe(gulp.dest('./docs/images'))
+        .pipe(browserSync.stream());
 }
 exports.copyImages = copyImages;
 
 // copy icons
 function copyIcons() {
     return gulp.src('./src/icons/*')
-        .pipe(gulp.dest('./docs/icons'));
+        .pipe(gulp.dest('./docs/icons'))
+        .pipe(browserSync.stream());
 }
 exports.copyIcons = copyIcons;
 
 // copy assets
 function copyAssets() {
     return gulp.src('./src/assets/*')
-        .pipe(gulp.dest('./docs/assets'));
+        .pipe(gulp.dest('./docs/assets'))
+        .pipe(browserSync.stream());
 }
 exports.copyAssets = copyAssets;
 
@@ -58,6 +60,9 @@ exports.copyHtml = copyHtml;
 function sassify() {
     return gulp.src('src/styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            cascade: false
+        }))
         .pipe(cleanCSS({ debug: true }, (details) => {
             console.log(`${details.name}: ${details.stats.originalSize}`);
             console.log(`${details.name}: ${details.stats.minifiedSize}`);
@@ -76,6 +81,18 @@ function minifyJs() {
 }
 exports.minifyJs = minifyJs;
 
+// copy minified images
+function minifyImg() {
+    return gulp.src('./src/images/*')
+        .pipe(tinypng({
+            key: 'LnbwWpyhlDyhhdVgPQ8n1XmQHnZqrmXC',
+            log: true
+        }))
+        .pipe(gulp.dest('./docs/images/min'));
+}
+exports.minifyImg = minifyImg;
+gulp.task('minifyImages', gulp.series(minifyImg));
+
 gulp.task('build', gulp.series(copyHtml, sassify, minifyJs));
 
 // watching files for changes
@@ -88,6 +105,9 @@ function watch() {
     gulp.watch('src/*.html', gulp.series(copyHtml)).on('change', browserSync.reload);
     gulp.watch('src/scripts/*.js', gulp.series(minifyJs)).on('change', browserSync.reload);
     gulp.watch('src/styles/**/*.scss', gulp.series(sassify)).on('change', browserSync.reload);
+    gulp.watch('src/assets/**/*', gulp.series(copyAssets)).on('change', browserSync.reload);
+    gulp.watch('src/images/*', gulp.series(copyImages)).on('change', browserSync.reload);
+    gulp.watch('src/icons/**/*', gulp.series(copyIcons)).on('change', browserSync.reload);
 }
 exports.watch = watch;
 

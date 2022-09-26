@@ -46,12 +46,8 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <!-- documentation -->
-    <!-- use webp and imagemin -->
     <!-- check links and other clickables. -->
-    <!-- Optimize for mobile devices. -->
-    <!-- optimize contents -->
     <!-- check all assets -->
-    <!-- develop social media thumb image -->
     <!-- update sitemap -->
     <!-- update google search console -->
 </head>
@@ -78,11 +74,16 @@
                 <a href="javascript:void()" onclick="openComingSoonModal()" class="each_header_nav_link">Articles</a>
                 <a href="mailto:hellotushaar@gmail.com" class="each_header_nav_link active">Contact</a> 
             </nav>
+            <span class="mobile_nav_btn" onclick="openMobileNav()">
+                <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1H17M1 9H17" stroke="#3374F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
         </header>
 
         <div class="quick_intro">
             <picture>
-                <source src="./images/profile_photo.png">
+                <source media="(max-width:768px)" srcset="./images/min/profile_photo.png">
                 <img src="./images/profile_photo.png" alt="Tushar's self portrait">
             </picture>
 
@@ -97,11 +98,28 @@
         </div>
 
         <div class="landing_quick_links">
-            <a href="https://linkedin.com/in/hellotushaar" class="" target="_blank">LinkedIn</a>
-            <a href="https://github.com/hellotushaar" class="" target="_blank">GitHub</a>
-            <a href="https://twitter.com/hellotushaar" class="" target="_blank">Twitter</a>
+            <a href="https://linkedin.com/in/hellotushaar" target="_blank">LinkedIn</a>
+            <a href="https://github.com/hellotushaar" target="_blank">GitHub</a>
+            <a href="https://twitter.com/hellotushaar" target="_blank">Twitter</a>
         </div>
     </section>
+
+    <aside class="modal_overlay" id="mobile_nav_overlay">
+        <div class="mobile_nav_wrapper">
+            <span class="mobile_nav_close_btn" onclick="closeMobileNav()">
+                <img src="./icons/cross.svg" alt="x">
+            </span>
+            
+            <nav>
+                <a href="javascript:void()" onclick="closeMobileNav(); document.getElementById('experiences').scrollIntoView({behavior: 'smooth'});" class="each_header_nav_link">Experiences</a>
+                <a href="javascript:void()" onclick="closeMobileNav(); openComingSoonModal()">Articles</a>
+                <a href="mailto:hellotushaar@gmail.com" onclick="closeMobileNav()">Contact</a> 
+                <a href="https://linkedin.com/in/hellotushaar" target="_blank" onclick="closeMobileNav()">LinkedIn</a>
+                <a href="https://github.com/hellotushaar" target="_blank" onclick="closeMobileNav()">GitHub</a>
+                <a href="https://twitter.com/hellotushaar" target="_blank" onclick="closeMobileNav()">Twitter</a>
+            </nav>
+        </div>
+    </aside>
 
     <section class="resume_container">
         <main>
@@ -128,10 +146,13 @@
                 <a href="javascript:void()" onclick="openExperiencesModal()" class="category_extra_btn">See Other Experiences</a>
             </div>
 
-            <div class="categories certifications">
+            <div class="categories certifications" id="certifications">
                 <h1 class="category_title">Trainings & Certifications</h1>
                 <div class="experience_wrap">
-                    <img src="./images/Coursera_TEUWC443AQEA1024_1.png" alt="" class="category_image" loading="lazy">
+                    <picture>
+                        <source media="(max-width:768px)" srcset="./images/min/Coursera_TEUWC443AQEA1024_1.png">
+                        <img src="./images/Coursera_TEUWC443AQEA1024_1.png" alt="Coursera Certificate" class="category_image" loading="lazy">
+                    </picture>
                     <h2 class="category_subtitle">Introduction to Hardware and Operating Systems · IBM Skills Network</h2>
                     <p class="category_meta">June 2022 - <a href="https://coursera.org" target="_blank">Coursera</a></p>
 
@@ -154,7 +175,10 @@
             <div class="categories badges">
                 <h1 class="category_title">Badges & Trophies</h1>
                 <div class="experience_wrap">
-                    <img src="./images/Microsoft Learn1024_1.png" alt="" class="category_image" loading="lazy">
+                    <picture>
+                        <source media="(max-width:768px)" srcset="./images/min/Microsoft Learn1024_1.png">
+                        <img src="./images/Microsoft Learn1024_1.png" alt="Microsoft Certification" class="category_image" loading="lazy">
+                    </picture>
                     <h2 class="category_subtitle">Microsoft Azure Fundamentals: Describe cloud concepts</h2>
                     <p class="category_meta">September 2022 - <a href="https://docs.microsoft.com/en-us/training/" target="_blank">Microsoft</a></p>
 
@@ -322,11 +346,11 @@
                 <p>&copy;2022. Designed and developed by Tushar.</p>
             </div>
             <nav class="footer_top_right">
-                <a href="https://linkedin.com/in/hellotushaar" target="_blank">Experiences</a>
-                <a href="https://linkedin.com/in/hellotushaar" target="_blank">Certifications</a>
+                <a href="javascript:void()" onclick="document.getElementById('experiences').scrollIntoView({behavior: 'smooth'});">Experiences</a>
+                <a href="javascript:void()" onclick="document.getElementById('certifications').scrollIntoView({behavior: 'smooth'});">Certifications</a>
                 <a href="javascript:void()" onclick="openComingSoonModal()">Articles</a>
                 <a href="./assets/resume.pdf" download="Résumé" title="Download PDF, 40 MB">Résumé</a>
-                <a href="javascript:void()">Terms</a>
+                <!-- <a href="javascript:void()">Terms</a> -->
                 <a href="mailto:hellotushaar@gmail.com">Contact</a>
             </nav>
         </div>
@@ -344,7 +368,7 @@
         </div>
     </footer>
 
-    <div id="modal_overlay" class="modal_overlay">
+    <div class="modal_overlay" id="comingsoon_modal_overlay">
         <div id="coming_soon_modal">
             <div class="coming_soon_contents">
                 <h1 class="category_title">Coming up soon!</h1>
@@ -428,11 +452,11 @@
                         <p class="category_meta">August 2022 - Member</p>
 
                         <div class="category_info">
-                            Vibable Media is a digital marketing startup agency based in Dhaka, Bangladesh. Tushar's role was to create the official website for the agency that would showcase its services, accomplishment and agenda to its potential customers.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ipsum optio? Facere quos modi repellendus minima rem sapiente asperiores earum?
                             <ul>
-                                <li>Built the website using frontend technologies for all screen sizes.</li>
-                                <li>Designed and updated the layouts to meet usability, convenience and performance.</li>
-                                <li>Leveraged updated technologies to create a pixel-perfect solution.</li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         </div>
                         <p class="category_link">

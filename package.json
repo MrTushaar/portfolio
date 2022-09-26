@@ -21,6 +21,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-sass": "^5.1.0",
+    "gulp-tinypng-compress": "^1.2.5",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.54.8"
   },

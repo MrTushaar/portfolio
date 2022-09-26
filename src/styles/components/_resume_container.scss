@@ -9,6 +9,18 @@
     main .categories, aside .categories {
         margin-bottom: 2rem;
     }
+
+    @include breakpoint(lg, max) {
+        padding: 2rem 6%;
+    }
+
+    @include breakpoint(1024px, max) {
+        padding: 2rem 2rem;
+    }
+
+    @include breakpoint(768px, max) {
+        display: block;
+    }
 }
 
 .categories {

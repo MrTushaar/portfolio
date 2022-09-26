@@ -12,13 +12,38 @@ footer {
     justify-content: space-between;
     border-bottom: 1px solid rgba($theme, 0.4);
 
-    .footer_top_right a {
-        margin-left: 1rem;
-        color: $white;
-        transition: $transition;
+    @include breakpoint(768px, max) {
+        display: block;
+        text-align: left;
+    }
 
-        &:hover {
-            color: lighten($theme, 16%);
+    .footer_top_right {
+
+        @include breakpoint(768px, max) {
+            margin-top: 0.5rem;
+        }
+
+        a {
+            margin-left: 1rem;
+            color: $white;
+            transition: $transition;
+    
+            &:hover {
+                color: lighten($theme, 16%);
+            }
+
+            @include breakpoint(768px, max) {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+        }
+
+        @include breakpoint(1024px, max) {
+            text-align: right;
+        }
+
+        @include breakpoint(768px, max) {
+            text-align: left;
         }
     }
 }
@@ -27,13 +52,20 @@ footer {
     @extend .footer_top;
     border: none;
 
-    .footer_bottom_left a {
-        margin-right: 1rem;
-        color: $white;
-        transition: $transition;
+    .footer_bottom_left {
 
-        &:hover {
-            color: lighten($theme, 16%);
+        @include breakpoint(768px, max) {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            margin-right: 1rem;
+            color: $white;
+            transition: $transition;
+
+            &:hover {
+                color: lighten($theme, 16%);
+            }
         }
     }
     .footer_bottom_right a {

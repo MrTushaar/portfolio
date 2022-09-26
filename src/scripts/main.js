@@ -1,42 +1,37 @@
 
-// const header_nav = document.querySelectorAll(".each_header_nav_link");
-// const h = document.querySelector('.each_header_nav_link:hover');
+const body = document.querySelector('body');
 
-// document.addEventListener('mouseenter', function() {
-// for (const i of header_nav) {
-//     let activa = i.classList.contains("active");
-// if (i.classList.contains("active") && !(h.classList.contains('active'))) {
-//     h.classList.add("active"); 
-//     i.classList.remove("active"); 
-// }
-// active and hovered, add active;
-// not active and hovered, add active on hovered and remove active from active. 
-//     if (activa && h) {
-//         activa.classList.add('active');
-//     }
-// }
-// });
+// open and close mobile menu
+const mobile_nav_overlay = document.getElementById('mobile_nav_overlay');
+const mobile_nav_items = document.querySelectorAll('.mobile_nav_wrapper nav a');
 
-
-// const header_contact_btn = document.querySelector(".each_header_nav_link.contact");
-// // header_contact_btn.addEventListener('mouseover', func());
-// function func() {
-//     header_contact_btn.innerHTML = "Email";
-// }
+function openMobileNav() {
+    body.style.overflow = "hidden";
+    mobile_nav_overlay.classList.add('active');
+    mobile_nav_items.forEach(item => {
+        item.classList.add('show');
+    });
+}
+function closeMobileNav() {
+    body.style.overflow = "auto";
+    mobile_nav_overlay.classList.remove('active');
+    mobile_nav_items.forEach(item => {
+        item.classList.remove('show');
+    });
+}
 
 // open and close coming soon modal
-const body = document.querySelector('body');
-const modal_overlay = document.querySelector('.modal_overlay');
+const comingsoon_modal_overlay = document.getElementById('comingsoon_modal_overlay');
 const comingsoon_modal = document.getElementById('coming_soon_modal');
 
 function openComingSoonModal() {
     body.style.overflow = "hidden";
-    modal_overlay.classList.add('active');
+    comingsoon_modal_overlay.classList.add('active');
     comingsoon_modal.classList.add('active');
 }
 function closeComingSoonModal() {
     body.style.overflow = "auto";
-    modal_overlay.classList.remove('active');
+    comingsoon_modal_overlay.classList.remove('active');
     comingsoon_modal.classList.remove('active');
 }
 

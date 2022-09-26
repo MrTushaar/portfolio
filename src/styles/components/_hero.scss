@@ -2,8 +2,9 @@
 .hero {
     position: relative;
     padding: 2rem 10%;
-    height: 70vh;
-    background: url('../images/hero_bg.jpg') no-repeat fixed bottom right;
+    height: 28rem;
+    background: $section_bg;
+    background: url('../images/hero_bg.jpg') no-repeat fixed right center;
     background-size: cover;
     z-index: 0;
 
@@ -14,8 +15,21 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: linear-gradient(180deg, rgba(246, 246, 246, 0.6) 34.38%, #F6F6F6 100%);
+        background: linear-gradient(180deg, rgba($section_bg, 0.6) 34.38%, $section_bg 100%);
         z-index: -1;
+    }
+
+    @include breakpoint(lg, max) {
+        padding: 2rem 6%;
+    }
+
+    @include breakpoint(1024px, max) {
+        padding: 2rem 2rem;
+        height: 24rem;
+    }
+
+    @include breakpoint(768px, max) {
+        height: 30rem;
     }
 }
 
@@ -58,7 +72,7 @@ header nav {
     background: $white;
     padding: 0.3rem 0.4rem;
     border-radius: 30px;
-    box-shadow: 0px 10px 50px rgba(18, 22, 25, 0.05);
+    box-shadow: 0px 10px 50px rgba($black, 0.05);
     font-size: 0;
 
     a {
@@ -95,6 +109,100 @@ header nav {
                 visibility: visible;
             }
         }
+
+        @include breakpoint(1024px, max) {
+            padding: 0.5rem 2rem;
+        }
+    }
+
+    @include breakpoint(768px, max) {
+        display: none;
+    }
+}
+
+header .mobile_nav_btn {
+    position: fixed;
+    right: 2rem;
+    background: $white;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    transition: $transition;
+    animation: mobileNav 1.5s 9 forwards;
+
+    @include breakpoint(768px, max) {
+        display: flex;
+    }
+}
+
+@keyframes mobileNav {
+    // 0% {box-shadow: 0 0 0 0 rgba($theme, 0)}
+    from {box-shadow: 0 0 0 1rem rgba($theme, 0.2)}
+    to {box-shadow: 0 0 0 3rem rgba($theme, 0)}
+}
+
+.mobile_nav_wrapper {
+    padding: 2rem;
+    text-align: right;
+    // display: none;
+
+    .mobile_nav_close_btn {
+        background: $white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-top: -0.3rem;
+
+        img {
+            width: 30%;
+            height: 30%;
+        }
+    }
+    nav {
+        text-align: right;
+        margin-top: 2.5rem;
+
+        a {
+            color: $theme;
+            font-weight: 500;
+            display: table;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            background: $white;
+            padding: 0.5rem 2rem;
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-2rem);
+            transition: $transition;
+
+            &.show {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:nth-child(1) {transition-delay: 0.1s;}
+            &:nth-child(2) {transition-delay: 0.2s;}
+            &:nth-child(3) {transition-delay: 0.3s;}
+            &:nth-child(4) {transition-delay: 0.4s;}
+            &:nth-child(5) {transition-delay: 0.5s;}
+            &:nth-child(6) {transition-delay: 0.6s;}
+        }
+    }
+
+    @include breakpoint(768px, max) {
+        // display: block;
     }
 }
 
@@ -104,18 +212,47 @@ header nav {
     display: flex;
     align-items: center;
 
+    @include breakpoint(768px, max) {
+        display: block;
+        width: calc(100% - 4rem);
+        text-align: center;
+    }
+
     img {
         width: 15rem;
         margin-right: 2rem;
         border-radius: 50%;
+
+        @include breakpoint(1024px, max) {
+            width: 12rem;
+            margin-right: 1.2rem;
+        }
+
+        @include breakpoint(768px, max) {
+            margin: 0 auto;
+            margin-bottom: 1rem;
+        }
+
+        @include breakpoint(480px, max) {
+            width: 10rem;
+        }
     }
 }
 
 .quick_intro_text_group {
+
     h1 {
         font-size: 3.8rem;
         font-weight: 900;
         line-height: 1;
+
+        @include breakpoint(1024px, max) {
+            font-size: 2.8rem;
+        }
+
+        @include breakpoint(480px, max) {
+            font-size: 2.2rem;
+        }
     }
     ul {
         margin-top: 0.6rem;
@@ -125,6 +262,10 @@ header nav {
             font-size: 1.2rem;
             font-weight: 600;
             color: rgba($black, 0.3);
+
+            @include breakpoint(1024px, max) {
+                font-size: 1rem;
+            }
         }
     }
     a {
@@ -156,7 +297,7 @@ header nav {
     }
 }
 
-.landing_quick_links{
+.landing_quick_links {
     position: absolute;
     bottom: 4rem;
     right: 10%;
@@ -176,5 +317,17 @@ header nav {
             background: $white;
             color: $theme;
         }
+    }
+
+    @include breakpoint(lg, max) {
+        right: 6%;
+    }
+
+    @include breakpoint(1024px, max) {
+        right: 2rem;
+    }
+
+    @include breakpoint(768px, max) {
+        display: none;
     }
 }
