@@ -118,17 +118,17 @@
         margin-bottom: 1.2rem;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(5rem);
+        transform: scale(0.9);
         transition: $transition;
 
-        &.one {
-            transition-delay: 0.1s;
-        }
-        &.two {
-            transition-delay: 0.2s;
-        }
+        // &.one {
+        //     transition-delay: 0.1s;
+        // }
+        // &.two {
+        //     transition-delay: 0.2s;
+        // }
         &.active {
-            transform: translateY(0);
+            transform: scale(1);
             opacity: 1;
             visibility: visible;
         }
