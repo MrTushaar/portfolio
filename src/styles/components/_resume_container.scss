@@ -31,6 +31,15 @@
     }
 }
 
+.certifications .experience_wrap, 
+.education .education_wrap {
+    margin-bottom: 1.8rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
 .portfolio_links a {
     @include linked_buttons("nonfocused", "false");
     display: inline-flex;
@@ -53,8 +62,12 @@
     }
 }
 
-.education .education_wrap:last-child {
-    margin-top: 1.8rem;
+.education .education_wrap {
+    margin-bottom: 1.8rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 .expertise {
