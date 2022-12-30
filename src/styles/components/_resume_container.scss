@@ -40,7 +40,8 @@
     }
 }
 
-.portfolio_links a {
+.portfolio_links a, 
+.badge_links a {
     @include linked_buttons("nonfocused", "false");
     display: inline-flex;
     align-items: center;
