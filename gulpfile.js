@@ -20,6 +20,13 @@ function copySitemap() {
 }
 exports.copySitemap = copySitemap;
 
+// copy robots file 
+function copyRobots() {
+    return gulp.src('src/robots.txt')
+        .pipe(gulp.dest('docs'));
+}
+exports.copyRobots = copyRobots;
+
 // copy images
 function copyImages() {
     return gulp.src('./src/images/*')
@@ -45,7 +52,7 @@ function copyAssets() {
 exports.copyAssets = copyAssets;
 
 // *** Note: Run 'copy_nonHtml_files' only when favicon, or xml-sitemap are modified
-gulp.task('copy_nonHtml_files', gulp.series(copyFavicon, copySitemap, copyImages, copyIcons, copyAssets));
+gulp.task('copy_nonHtml_files', gulp.series(copyFavicon, copySitemap, copyRobots, copyImages, copyIcons, copyAssets));
 
 // build tasks ------------------------------------------------------------------------
 // copy .html files 

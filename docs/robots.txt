@@ -1,0 +1,7 @@
+
+User-agent: baiduspider
+Disallow: /
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://hellotushaar.me/sitemap.xml
