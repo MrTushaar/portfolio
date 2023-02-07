@@ -4,13 +4,10 @@
     font-size: 2.25rem;
     color: rgba($black, 0.5);
     margin-bottom: 1.2rem;
-    
     background: linear-gradient(60deg, #3374F3 0%, #9021FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0.8;
-
     transition: $transition;
 }
 

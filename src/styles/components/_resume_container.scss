@@ -25,10 +25,6 @@
 
 .categories {
     @include resume_category;
-
-    &:hover .category_title {
-        opacity: 1;
-    }
 }
 
 .certifications .experience_wrap, 
@@ -117,16 +113,13 @@
     }
 }
 
-.hobbies {
-    font-size: 0;
-    
-    span, a {
-        @include nonlinked_buttons;
-        margin-bottom: 1rem;
-        margin-right: 1rem;
+.latest_blog {
+    li a {
+        font-weight: 400;
+        color: $black;
 
-        &:last-child {
-            margin-bottom: 0;
+        &:hover {
+            color: $theme;
         }
     }
 }
