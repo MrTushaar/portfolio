@@ -23,23 +23,24 @@
 
 #coming_soon_modal {
     position: absolute;
-    width: 80%;
-    top: 2rem;
+    width: 60%;
+    top: 0;
     text-align: center;
-    background: $section_bg;
+    background: $white;
     border-radius: 30px;
     padding: 5rem 2rem;
-    margin: 5rem 10%;
+    margin: 5rem 20%;
     z-index: 1000;
     box-sizing: border-box;
     visibility: hidden;
-    opacity: 0;
+    // opacity: 0;
+    transform: translateY(1rem) scale(0.95);
     transition: $transition;
 
     &.active {
-        top: 0;
         visibility: visible;
-        opacity: 1;
+        // opacity: 1;
+        transform: translateY(0) scale(1);
     }
 
     @include breakpoint(768px, max) {
