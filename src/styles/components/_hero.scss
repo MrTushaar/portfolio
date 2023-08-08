@@ -253,9 +253,10 @@ header .mobile_nav_btn {
 
         li {        
             list-style: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: rgba($black, 0.3);
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            color: rgba($black, 0.5);
 
             @include breakpoint(1024px, max) {
                 font-size: 1rem;
@@ -271,7 +272,7 @@ header .mobile_nav_btn {
 
         &::after {
             @include linked_buttons("focused", "true");
-            content: '1.8 MB, PDF';
+            content: '2 MB, PDF';
             text-align: center;
             position: absolute;
             top: 100%;
